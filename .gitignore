@@ -1,6 +1,9 @@
 cevsaevenv/*
-AE/dataset/*
+# AE/dataset/*
 results/*
+CE/gnn_cff/log/*
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
