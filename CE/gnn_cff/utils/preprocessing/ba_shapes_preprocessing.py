@@ -1,5 +1,6 @@
 """Read the Mutag dataset and create the graphx"""
-
+import sys
+sys.path.append('/home/amir/Documents/code/CE_vs_AE/CE/')
 import numpy as np
 import os
 import dgl
@@ -224,7 +225,7 @@ class BAShapesDataset(DGLDataset):
 
 def ba_shapes_preprocessing(dataset_dir):
     name = "BA_Shapes"
-    data = np.load(os.path.join(dataset_dir, 'syn_data.pkl'), allow_pickle=True)
+    data = np.load(os.path.join('CE', dataset_dir, 'syn_data.pkl'), allow_pickle=True)    
     adj = np.array(data[0], dtype='float32')
     feats = data[1]
     y_train = data[2]

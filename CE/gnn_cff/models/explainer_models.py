@@ -250,8 +250,8 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
         # graph_export(self, exp_dict, graphNo=3)
         print('average number of exps:', sum(num_dict.values()) / len(num_dict.keys()))
 
-        for i in range(1,100):
-            save_graph(self.G_dataset.graphs[i], f'BAgraphs/g{i}')
+        # for i in range(1,100):
+        #     save_graph(self.G_dataset.graphs[i], f'BAgraphs/g{i}')
         # graph_list = [684, 683, 666, 629, 562, 544, 543, 444]
         # for i in graph_list:
         #     graph_export(self, exp_dict, i)
