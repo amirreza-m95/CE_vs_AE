@@ -15,10 +15,7 @@ import sys
 
 from utils.utils import draw_graph, draw_subgraph_around_node, get_masked_graph, save_graph, draw_graph_from_tensorAdj
 
-
-
-
-if __name__ == "__main__":
+def mainCF2_shapesXp():
     torch.manual_seed(0)
     np.random.seed(0)
     np.set_printoptions(threshold=sys.maxsize)
@@ -56,3 +53,7 @@ if __name__ == "__main__":
     )
 
     explainer.explain_nodes_gnn_stats()
+
+
+if __name__ == "__main__":
+    mainCF2_shapesXp()

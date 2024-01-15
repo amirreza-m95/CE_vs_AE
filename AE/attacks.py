@@ -1,4 +1,5 @@
-
+import sys
+sys.path.append('AE/')
 from deeprobust.graph.defense import GCN
 from deeprobust.graph.targeted_attack import Nettack
 
@@ -26,18 +27,31 @@ from deeprobust.graph.black_box import *
 from deeprobust.graph.targeted_attack import RLS2V
 from deeprobust.graph.rl.rl_s2v_config import args
 import warnings
+from scipy.sparse import csr_matrix
 
 
 
-def targetedNettack(targetNode, features, labels, adj, idx_test, idx_train, idx_val):
-  surrogate = GCN(nfeat=features.shape[1], nclass=labels.max().item()+1,
+def targetedNettack(targetNode):
+    with open(f'AE/dataset/syn_data.pkl', 'rb') as file:
+        data = pickle.load(file)
+
+    adj = torch.tensor(data[0], dtype=torch.float32)
+    features = torch.tensor(data[1], dtype=torch.float32)
+    y_train = data[2]
+    y_val = data[3]
+    y_test = data[4]
+    idx_train, idx_val, idx_test = data[5], data[6], data[7]
+    edge_labels = torch.tensor(data[8])
+    labels_oneHot = np.array(np.logical_or(y_train, np.logical_or(y_val, y_test)), dtype=int)
+    labels = torch.tensor(np.argmax(labels_oneHot, axis=1))
+    surrogate = GCN(nfeat=features.shape[1], nclass=labels.max().item()+1,
               nhid=16, dropout=0, with_relu=False, with_bias=False, device='cpu').to('cpu')
-  surrogate.fit(features, adj, labels, idx_train, idx_val, patience=30)
-  model = Nettack(surrogate, nnodes=adj.shape[0], attack_structure=True, attack_features=True, device='cpu').to('cpu')
-  # Attack
-  model.attack(features, adj, labels, targetNode, n_perturbations=2)
-  modified_adj = model.modified_adj # scipy sparse matrix
-  return modified_adj
+    surrogate.fit(features, adj, labels, idx_train, idx_val, patience=30)
+    model = Nettack(surrogate, nnodes=adj.shape[0], attack_structure=True, attack_features=True, device='cpu').to('cpu')
+    # Attack
+    model.attack(features, adj, labels, targetNode, n_perturbations=2)
+    modified_adj = model.modified_adj # scipy sparse matrix
+    return csr_matrix(adj.numpy()), modified_adj
 
 def init_setup():
     data = Dataset(root='/tmp/', name=args.dataset, setting='gcn')
