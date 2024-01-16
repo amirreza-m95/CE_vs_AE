@@ -11,6 +11,7 @@ import scipy.sparse as sp
 import numpy as np
 
 
+
 def flatten_adjacency_matrix(matrix):
     # Flatten the upper triangular part of the matrix (excluding the diagonal)
     flattened_weights = matrix[np.triu(np.ones_like(matrix), k=1) == 1]

@@ -31,7 +31,7 @@ from scipy.sparse import csr_matrix
 
 
 
-def targetedNettack(targetNode):
+def targetedNettack(targetNode, num_perturbation):
     with open(f'AE/dataset/syn_data.pkl', 'rb') as file:
         data = pickle.load(file)
 
@@ -47,9 +47,9 @@ def targetedNettack(targetNode):
     surrogate = GCN(nfeat=features.shape[1], nclass=labels.max().item()+1,
               nhid=16, dropout=0, with_relu=False, with_bias=False, device='cpu').to('cpu')
     surrogate.fit(features, adj, labels, idx_train, idx_val, patience=30)
-    model = Nettack(surrogate, nnodes=adj.shape[0], attack_structure=True, attack_features=True, device='cpu').to('cpu')
+    model = Nettack(surrogate, nnodes=adj.shape[0], attack_structure=True, attack_features=False, device='cpu').to('cpu')
     # Attack
-    model.attack(features, adj, labels, targetNode, n_perturbations=2)
+    model.attack(features, adj, labels, targetNode, n_perturbations=num_perturbation)
     modified_adj = model.modified_adj # scipy sparse matrix
     return csr_matrix(adj.numpy()), modified_adj
 

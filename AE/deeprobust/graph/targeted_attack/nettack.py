@@ -218,7 +218,10 @@ class Nettack(BaseAttack):
 
         self.potential_edges = self.potential_edges.astype("int32")
 
+        edge_flag = 0
         for _ in range(n_perturbations):
+            if edge_flag == 1:
+                break
             if verbose:
                 print("##### ...{}/{} perturbations ... #####".format(_+1, n_perturbations))
             if attack_structure:
@@ -241,7 +244,7 @@ class Nettack(BaseAttack):
 
                 # Do not consider edges that, if added/removed, would lead to a violation of the
                 # likelihood ration Chi_square cutoff value.
-                powerlaw_filter = filter_chisquare(new_ratios, ll_cutoff)
+                powerlaw_filter = filter_chisquare(new_ratios, ll_cutoff) #& (deltas < 0)
                 filtered_edges_final = filtered_edges[powerlaw_filter]
 
                 # Compute new entries in A_hat_square_uv
@@ -263,6 +266,7 @@ class Nettack(BaseAttack):
                 if best_edge_score < best_feature_score:
                     if verbose:
                         print("Edge perturbation: {}".format(best_edge))
+                        edge_flag = 1
                     change_structure = True
                 else:
                     if verbose:
@@ -275,6 +279,9 @@ class Nettack(BaseAttack):
                 change_structure = False
 
             if change_structure:
+                if verbose:
+                    print("Edge perturbation: {}".format(best_edge))
+                    edge_flag = 1
                 # perform edge perturbation
                 self.modified_adj[tuple(best_edge)] = self.modified_adj[tuple(best_edge[::-1])] = 1 - self.modified_adj[tuple(best_edge)]
                 self.adj_norm = utils.normalize_adj(self.modified_adj)
@@ -482,6 +489,11 @@ class Nettack(BaseAttack):
         ixs, vals = compute_new_a_hat_uv(edges, node_ixs, edges_set, twohop_ixs, values_before, degrees,
                                          potential_edges.astype(np.int32), target_node)
         ixs_arr = np.array(ixs)
+
+        # print(ixs_arr.shape)
+        # ixs_arr = np.array(ixs_arr)  # Convert to 2D array if necessary
+        # print(ixs_arr.shape)
+        # print(len(vals))
         a_hat_uv = sp.coo_matrix((vals, (ixs_arr[:, 0], ixs_arr[:, 1])), shape=[len(potential_edges), self.nnodes])
 
         return a_hat_uv
@@ -567,6 +579,7 @@ def compute_new_a_hat_uv(edge_ixs, node_nb_ixs, edges_set, twohop_ixs, values_be
             return_values.append(new_val)
 
     return return_ixs, return_values
+
 
 def filter_singletons(edges, adj):
     """
