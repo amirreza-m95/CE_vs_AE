@@ -3,7 +3,7 @@ from scipy.sparse import csr_matrix
 import pickle
 import torch
 
-from AE.attacks import targetedNettack, RLS2Vattack, FGAattack
+from attacks import targetedNettack, RLS2Vattack, FGAattack
 
 def data_loader(filename):
   with open(filename, 'rb') as file:
@@ -11,14 +11,14 @@ def data_loader(filename):
   return graphBA
 
 
-
+# sbatch --job-name=RL-S2V100k --mail-user=amir.reze@uibk.ac.at --time=10:00:00 --mem=120G /home/amir.reza/jobs/single-node-gpu.job python AE/main.py
 
 def main():
     targetNode = 543
-    modified_adj_nettack = targetedNettack(targetNode)
+    # modified_adj_nettack = targetedNettack(targetNode=543, num_perturbation=2)
 
-    # RLS2Vattack()
-    FGAattack()
+    RLS2Vattack()
+    # FGAattack()
     
 
 

@@ -64,7 +64,7 @@ def init_setup():
 
     idx_train, idx_val, idx_test = data.idx_train, data.idx_val, data.idx_test
     device = torch.device('cuda') if args.ctx == 'gpu' else 'cpu'
-    device = 'cpu' #change
+    # device = 'cpu' #change
 
     # black box setting
     adj, features, labels = preprocess(adj, features, labels, preprocess_adj=False, sparse=True, device=device)
@@ -116,7 +116,7 @@ def RLS2Vattack():
     print( 'meta list ratio:', len(meta_list) / float(len(idx_valid)))
 
     device = torch.device('cuda') if args.ctx == 'gpu' else 'cpu'
-    device = 'cpu' #change
+    # device = 'cpu' #change
 
     env = NodeAttackEnv(features, labels, total, dict_of_lists, victim_model, num_mod=args.num_mod, reward_type=args.reward_type)
     agent = RLS2V(env, features, labels, meta_list, attack_list, dict_of_lists, num_wrong=num_wrong,

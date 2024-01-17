@@ -28,7 +28,7 @@ cmd_opt.add_argument('-dropout', type=float, default=0.5, help='dropout rate')
 cmd_opt.add_argument('-dataset', type=str, default='cora', help='citeseer/cora/pubmed')
 
 # for attack
-cmd_opt.add_argument('-num_steps', type=int, default=500000, help='rl training steps')
+cmd_opt.add_argument('-num_steps', type=int, default=100000, help='rl training steps')
 # cmd_opt.add_argument('-frac_meta', type=float, default=0, help='fraction for meta rl learning')
 
 cmd_opt.add_argument('-meta_test', type=int, default=0, help='for meta rl learning')
