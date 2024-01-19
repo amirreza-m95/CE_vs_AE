@@ -11,7 +11,7 @@ def data_loader(filename):
   return graphBA
 
 
-# sbatch --job-name=RL-S2V100k --mail-user=amir.reze@uibk.ac.at --time=10:00:00 --mem=120G /home/amir.reza/jobs/single-node-gpu.job python AE/main.py
+# sbatch --job-name=CEvsAE --mail-user=amir.reze@uibk.ac.at --time=10:00:00 --mem=120G /home/amir.reza/jobs/single-node-gpu.job "python "
 
 def main():
     targetNode = 543

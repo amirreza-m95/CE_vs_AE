@@ -1,3 +1,11 @@
+import sys
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.join(current_dir, '..')
+sys.path.append(parent_dir)
+# sys.path.append(os.path.join(parent_dir,'..'))
+# sys.path.append(os.path.join(parent_dir,'..','..'))
+
 import numpy as np
 import torch
 import os
@@ -103,7 +111,6 @@ if __name__ == "__main__":
     torch.manual_seed(0)
     np.random.seed(0)
     train_args = arg_parse_train_node_ba_shapes()
-    train_args.gpu = False # added argument since running in gpuless system
     if train_args.gpu:
         os.environ["CUDA_VISIBLE_DEVICES"] = train_args.cuda
         print("Using CUDA", train_args.cuda)

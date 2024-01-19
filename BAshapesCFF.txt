@@ -1,0 +1,23 @@
+Final train accuracy: 0.9803571428571428
+Test accuracy: 0.9785714285714285
+time:  1185.4805343151093
+
+Final train accuracy: 0.975
+Test accuracy: 0.9857142857142858
+time:  1119.0798552036285
+
+Final train accuracy: 0.975
+Test accuracy: 0.9857142857142858
+time:  1127.4737164974213
+
+Final train accuracy: 0.975
+Test accuracy: 0.9857142857142858
+time:  1206.870173215866
+
+Final train accuracy: 0.9785714285714285
+Test accuracy: 0.9857142857142858
+time:  1131.0888040065765
+
+
+
+
