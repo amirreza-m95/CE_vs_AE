@@ -77,7 +77,7 @@ class GCNNodeBAShapes(torch.nn.Module):
         h = torch.nn.functional.relu(h)
         h = self.conv3(g, h, e_weight)
         if self.if_exp:  # if in the explanation mod, should add softmax layer
-            h = torch.nn.functional.softmax(h)
+            h = torch.nn.functional.softmax(h, dim=0)
         g.ndata['h'] = h
         return g.ndata['h'][target_node]
 
