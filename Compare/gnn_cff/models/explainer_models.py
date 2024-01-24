@@ -340,7 +340,7 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
 
 
         #draw_subgraph_around_node(get_masked_graph(self.G_dataset.graphs[19],385 ), 19)
-        PN = self.compute_pn(exp_dict, pred_label_dict)
+        PN = self.compute_pn(exp_dict, pred_label_dict, cf_dict)
         # PS = self.compute_ps(exp_dict, pred_label_dict)
         PNnettack = self.compute_pn_Nettack(exp_dict, pred_label_dict, adv_dict)
         # PSnettack = self.compute_ps(exp_dict, pred_label_dict, subgraphMapping)
@@ -388,21 +388,26 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
         exp_num = new_edge_num / 2
         return masked_adj, exp_num
 
-    def compute_pn(self, exp_dict, pred_label_dict):
+    def compute_pn(self, exp_dict, pred_label_dict, cf_dict):
         pn_count = 0
         for gid, masked_adj in exp_dict.items():
             graph = self.G_dataset.graphs[gid]
             target = self.G_dataset.targets[gid]
             ori_pred_label = pred_label_dict[gid]
-            if self.fix_exp:
-                if self.fix_exp > (len(masked_adj.flatten()) - 1):
-                    thresh = masked_adj.flatten().sort(descending=True)[0][len(masked_adj.flatten()) - 1]
-                else:
-                    thresh = masked_adj.flatten().sort(descending=True)[0][self.fix_exp + 1]
-            else:
-                thresh = self.args.mask_thresh
-            ps_adj = (masked_adj > thresh).float()
-            pn_adj = graph.edata['weight'] - ps_adj
+            # if self.fix_exp:
+            #     if self.fix_exp > (len(masked_adj.flatten()) - 1):
+            #         thresh = masked_adj.flatten().sort(descending=True)[0][len(masked_adj.flatten()) - 1]
+            #     else:
+            #         thresh = masked_adj.flatten().sort(descending=True)[0][self.fix_exp + 1]
+            # else:
+            #     thresh = self.args.mask_thresh
+            # ps_adj = (masked_adj > thresh).float()
+            # pn_adj = graph.edata['weight'] - ps_adj
+            node1= int(cf_dict[gid][0])
+            node2 = int(cf_dict[gid][1])
+            
+            pn_adj = self.remove_edge(masked_adj, node1, node2, graph.num_nodes())    
+
             new_pre = self.base_model(graph, graph.ndata['feat'].float(), pn_adj, target)[0]
             new_label = torch.argmax(new_pre)
             if new_label != ori_pred_label:
