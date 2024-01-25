@@ -319,7 +319,7 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
 
                 ## Nettack ###
                 model = Nettack(surrogate, nnodes=adj.shape[0], attack_structure=True, attack_features=False, device='cpu').to('cpu')
-                modified_adj, RecomToRemoveAdv = model.attack(features, adj, labels, gid, n_perturbations=int(exp_num))
+                modified_adj, RecomToRemoveAdv = model.attack(features, adj, labels, gid, n_perturbations=1)
 
                 #compare
                 adv_dict[gid] = (subgraphMapping[str(gid)][str(gid)],subgraphMapping[str(gid)][str(int(RecomToRemoveAdv[0][1]))])
@@ -341,7 +341,7 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
 
         #draw_subgraph_around_node(get_masked_graph(self.G_dataset.graphs[19],385 ), 19)
         PN = self.compute_pn(exp_dict, pred_label_dict, cf_dict)
-        # PS = self.compute_ps(exp_dict, pred_label_dict)
+        PS = self.compute_ps(exp_dict, pred_label_dict)
         PNnettack = self.compute_pn_Nettack(exp_dict, pred_label_dict, adv_dict)
         # PSnettack = self.compute_ps(exp_dict, pred_label_dict, subgraphMapping)
         if self.args.dataset == 'citeseer':
@@ -353,6 +353,7 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
             acc, pre, rec, f1 = self.compute_precision_recall(exp_dict)
         print('PN', PN)
         print('PS', PS)
+        print('PN Nettack ',PNnettack)
         print('PNS', 2 * PN * PS / (PN + PS))
         print('ave exp', sum(num_dict.values()) / len(num_dict.keys()))
         print('acc: ', acc, ' pre: ', pre, ' rec: ', rec, ' f1: ', f1)
