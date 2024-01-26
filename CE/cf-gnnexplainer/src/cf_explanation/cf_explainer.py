@@ -75,7 +75,7 @@ class CFExplainer:
 				best_loss = loss_total
 				num_cf_examples += 1
 		print("{} CF examples for node_idx = {}".format(num_cf_examples, self.node_idx))
-		print(" ")
+		# print(" ")
 		return(best_cf_example)
 
 
@@ -98,16 +98,16 @@ class CFExplainer:
 		loss_total.backward()
 		clip_grad_norm(self.cf_model.parameters(), 2.0)
 		self.cf_optimizer.step()
-		print('Node idx: {}'.format(self.node_idx),
-		      'New idx: {}'.format(self.new_idx),
-			  'Epoch: {:04d}'.format(epoch + 1),
-		      'loss: {:.4f}'.format(loss_total.item()),
-		      'pred loss: {:.4f}'.format(loss_pred.item()),
-		      'graph loss: {:.4f}'.format(loss_graph_dist.item()))
-		print('Output: {}\n'.format(output[self.new_idx].data),
-		      'Output nondiff: {}\n'.format(output_actual[self.new_idx].data),
-		      'orig pred: {}, new pred: {}, new pred nondiff: {}'.format(self.y_pred_orig, y_pred_new, y_pred_new_actual))
-		print(" ")
+		# print('Node idx: {}'.format(self.node_idx),
+		#       'New idx: {}'.format(self.new_idx),
+		# 	  'Epoch: {:04d}'.format(epoch + 1),
+		#       'loss: {:.4f}'.format(loss_total.item()),
+		#       'pred loss: {:.4f}'.format(loss_pred.item()),
+		#       'graph loss: {:.4f}'.format(loss_graph_dist.item()))
+		# print('Output: {}\n'.format(output[self.new_idx].data),
+		#       'Output nondiff: {}\n'.format(output_actual[self.new_idx].data),
+		#       'orig pred: {}, new pred: {}, new pred nondiff: {}'.format(self.y_pred_orig, y_pred_new, y_pred_new_actual))
+		# print(" ")
 		cf_stats = []
 		if y_pred_new_actual != self.y_pred_orig:
 			cf_stats = [self.node_idx.item(), self.new_idx.item(),
