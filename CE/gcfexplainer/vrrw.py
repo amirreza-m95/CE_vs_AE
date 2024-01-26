@@ -34,7 +34,7 @@ def get_args():
     parser.add_argument('--alpha', type=float, default=0.5, help='alpha value to balance individual and cumulative coverage')
     parser.add_argument('--theta', type=float, default=0.05, help='distance threshold value during training.')
     parser.add_argument('--teleport', type=float, default=0.1, help='teleport probability to input graphs')
-    parser.add_argument('--max_steps', type=int, default=50000, help='random walk step size')
+    parser.add_argument('--max_steps', type=int, default=500, help='random walk step size')
     parser.add_argument('--k', type=int, default=100000, help='number of graphs will be selected from counterfactuals')
     parser.add_argument('--device1', type=str, help='Cuda device or cpu for gnn model', default='0')
     parser.add_argument('--device2', type=str, help='Cuda device or cpu for neurosed model', default='0')
@@ -400,9 +400,9 @@ def counterfactual_summary_with_randomwalk(input_graphs, importance_args, telepo
         'traversed_hashes': traversed_hashes,
         'input_graphs_covered': input_graphs_covered,
     }
-    if not os.path.exists(f'results/{dataset_name}/runs/'):
+    if not os.path.exists( os.path.join(sys.path[0] ,f'results/{dataset_name}/runs/')):
         os.makedirs(os.path.join(sys.path[0] ,f'results/{dataset_name}/runs/'))
-    torch.save(save_item, f'results/{dataset_name}/runs/counterfactuals.pt')
+    torch.save(save_item, os.path.join(sys.path[0] ,f'results/{dataset_name}/runs/counterfactuals.pt'))
 
 
 def prepare_devices(device1, device2):
