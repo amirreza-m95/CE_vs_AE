@@ -15,6 +15,17 @@ import numpy as np
 from data import load_dataset
 from gnn import load_trained_gnn, load_trained_prediction
 
+from contextlib import contextmanager
+import time
+
+@contextmanager
+def timing():
+    start_time = time.time()
+    yield
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time: {elapsed_time} seconds")
+
 graph_map = {}  # graph_hash -> {edge_index, x}
 graph_index_map = {}  # graph hash -> index in counterfactual_graphs
 counterfactual_candidates = []  # [{frequency: int, graph_hash: str, importance_parts: tuple, input_graphs_covering_indexes: set}]
@@ -34,7 +45,7 @@ def get_args():
     parser.add_argument('--alpha', type=float, default=0.5, help='alpha value to balance individual and cumulative coverage')
     parser.add_argument('--theta', type=float, default=0.05, help='distance threshold value during training.')
     parser.add_argument('--teleport', type=float, default=0.1, help='teleport probability to input graphs')
-    parser.add_argument('--max_steps', type=int, default=500, help='random walk step size')
+    parser.add_argument('--max_steps', type=int, default=10000, help='random walk step size')
     parser.add_argument('--k', type=int, default=100000, help='number of graphs will be selected from counterfactuals')
     parser.add_argument('--device1', type=str, help='Cuda device or cpu for gnn model', default='0')
     parser.add_argument('--device2', type=str, help='Cuda device or cpu for neurosed model', default='0')
@@ -436,23 +447,24 @@ if __name__ == '__main__':
     # Load dataset
     graphs = load_dataset(dataset_name)
 
-    # Load GNN model for dataset
-    gnn_model = load_trained_gnn(dataset_name, device=device1)
-    gnn_model.eval()
+    with timing():
+        # Load GNN model for dataset
+        gnn_model = load_trained_gnn(dataset_name, device=device1)
+        gnn_model.eval()
 
-    # Load prediction based on model
-    preds = load_trained_prediction(dataset_name, device=device1)
-    preds = preds.cpu().numpy()
-    input_graph_indices = np.array(range(len(preds)))[preds == 0]
-    input_graphs = graphs[input_graph_indices.tolist()]
+        # Load prediction based on model
+        preds = load_trained_prediction(dataset_name, device=device1)
+        preds = preds.cpu().numpy()
+        input_graph_indices = np.array(range(len(preds)))[preds == 0]
+        input_graphs = graphs[input_graph_indices.tolist()]
 
-    # setting covered graph numbers to 0
-    input_graphs_covered = torch.zeros(len(input_graphs), dtype=torch.float)
+        # setting covered graph numbers to 0
+        input_graphs_covered = torch.zeros(len(input_graphs), dtype=torch.float)
 
-    importance_args = importance.prepare_and_get(graphs, gnn_model, input_graph_indices, args.alpha, args.theta, device1=device1, device2=device2, dataset_name=dataset_name)
+        importance_args = importance.prepare_and_get(graphs, gnn_model, input_graph_indices, args.alpha, args.theta, device1=device1, device2=device2, dataset_name=dataset_name)
 
-    # graphs with adjacency matrix and feature matrix
-    counterfactual_summary_with_randomwalk(input_graphs=input_graphs,
-                                           importance_args=importance_args,
-                                           teleport_probability=teleport_probability,
-                                           max_steps=max_steps)
+        # graphs with adjacency matrix and feature matrix
+        counterfactual_summary_with_randomwalk(input_graphs=input_graphs,
+                                            importance_args=importance_args,
+                                            teleport_probability=teleport_probability,
+                                            max_steps=max_steps)
