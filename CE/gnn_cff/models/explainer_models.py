@@ -268,7 +268,7 @@ class NodeExplainerEdgeMulti(torch.nn.Module):
         print('PN', PN)
         print('PS', PS)
         print('PNS', 2 * PN * PS / (PN + PS))
-        print('ave exp', sum(num_dict.values()) / len(num_dict.keys()))
+        print('ave exp size', sum(num_dict.values()) / len(num_dict.keys()))
         print('acc: ', acc, ' pre: ', pre, ' rec: ', rec, ' f1: ', f1)
         return PN, PS, 2 * PN * PS / (PN + PS), sum(num_dict.values()) / len(num_dict.keys()), acc, pre, rec, f1
 
