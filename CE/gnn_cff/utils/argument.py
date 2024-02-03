@@ -57,7 +57,7 @@ def arg_parse_exp_graph_mutag_0():
     parser.add_argument("--weight_decay", dest="weight_decay", type=float, default='0.005', help="L2 norm to the wights")
     parser.add_argument("--opt", dest="opt", type=str, default="adam", help="optimizer")
     parser.add_argument("--lr", dest="lr", type=float, default=0.05, help="learning rate")
-    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=500, help="number of the training epochs")
+    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=1000, help="number of the training epochs")
     parser.add_argument("--lam", dest="lam", type=float, default=1000,
                         help="hyper param control the trade-off between "
                              "the explanation complexity and explanation strength")
@@ -80,7 +80,7 @@ def arg_parse_exp_node_ba_shapes():
     parser.add_argument("--weight_decay", dest="weight_decay", type=float, default='0.005', help="L2 norm to the wights")
     parser.add_argument("--opt", dest="opt", type=str, default="adam", help="optimizer")
     parser.add_argument("--lr", dest="lr", type=float, default=0.01, help="learning rate")
-    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=2000, help="number of the training epochs")
+    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=3000, help="number of the training epochs")
     parser.add_argument("--lam", dest="lam", type=float, default=500,
                         help="hyper param control the trade-off between "
                              "the explanation complexity and explanation strength")
@@ -103,7 +103,7 @@ def arg_parse_exp_node_tree_cycles():
     parser.add_argument("--weight_decay", dest="weight_decay", type=float, default='0.005', help="L2 norm to the wights")
     parser.add_argument("--opt", dest="opt", type=str, default="adam", help="optimizer")
     parser.add_argument("--lr", dest="lr", type=float, default=0.05, help="learning rate")
-    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=500, help="number of the training epochs")
+    parser.add_argument("--num_epochs", dest="num_epochs", type=int, default=3000, help="number of the training epochs")
     parser.add_argument("--lam", dest="lam", type=float, default=500,
                         help="hyper param control the trade-off between "
                              "the explanation complexity and explanation strength")
