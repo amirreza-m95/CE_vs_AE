@@ -42,10 +42,10 @@ class CFExplainer:
 		for name, param in self.cf_model.named_parameters():
 			if name.endswith("weight") or name.endswith("bias"):
 				param.requires_grad = False
-		for name, param in self.model.named_parameters():
-			print("orig model requires_grad: ", name, param.requires_grad)
-		for name, param in self.cf_model.named_parameters():
-			print("cf model requires_grad: ", name, param.requires_grad)
+		# for name, param in self.model.named_parameters():
+		# 	print("orig model requires_grad: ", name, param.requires_grad)
+		# for name, param in self.cf_model.named_parameters():
+		# 	print("cf model requires_grad: ", name, param.requires_grad)
 
 
 

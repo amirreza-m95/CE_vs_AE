@@ -76,6 +76,7 @@ print("y_pred_orig counts: {}".format(np.unique(y_pred_orig.numpy(), return_coun
 test_cf_examples = []
 start = time.time()
 for i in idx_test[:]:
+	print(i)
 	sub_adj, sub_feat, sub_labels, node_dict = get_neighbourhood(int(i), edge_index, args.n_layers + 1, features, labels)
 	new_idx = node_dict[int(i)]
 
@@ -116,6 +117,6 @@ print("Number of CF examples found: {}/{}".format(len(test_cf_examples), len(idx
 
 # Save CF examples in test set
 
-with safe_open("../results/{}/{}/{}_cf_examples_lr{}_beta{}_mom{}_epochs{}_seed{}".format(args.dataset, args.optimizer, args.dataset,
+with safe_open("results/{}/{}/{}_cf_examples_lr{}_beta{}_mom{}_epochs{}_seed{}".format(args.dataset, args.optimizer, args.dataset,
 																	args.lr, args.beta, args.n_momentum, args.num_epochs, args.seed), "wb") as f:
 	pickle.dump(test_cf_examples, f)

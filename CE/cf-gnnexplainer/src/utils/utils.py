@@ -19,6 +19,7 @@ def mkdir_p(path):
 def safe_open(path, w):
 	''' Open "path" for writing, creating any parent directories as needed.'''
 	mkdir_p(os.path.dirname(path))
+	print('os path: ', os.path.dirname(path))
 	return open(path, w)
 
 

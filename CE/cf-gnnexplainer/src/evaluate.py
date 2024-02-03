@@ -32,7 +32,7 @@ elif "syn5" in args.path:
 elif "syn1" in args.path:
 	dataset = "syn1"
 
-with open("../data/gnn_explainer/{}.pickle".format(dataset), "rb") as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","data/gnn_explainer/{}.pickle".format(dataset)), "rb") as f:
 	data = pickle.load(f)
 
 adj = torch.Tensor(data["adj"]).squeeze()  # Does not include self loops
@@ -45,7 +45,7 @@ edge_index = dense_to_sparse(adj)
 norm_adj = normalize_adj(adj)
 model = GCNSynthetic(nfeat=features.shape[1], nhid=hidden, nout=hidden,
                      nclass=len(labels.unique()), dropout=dropout)
-model.load_state_dict(torch.load("../models/gcn_3layer_{}.pt".format(dataset)))
+model.load_state_dict(torch.load(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","models/gcn_3layer_{}.pt".format(dataset))))
 model.eval()
 output = model(features, norm_adj)
 y_pred_orig = torch.argmax(output, dim=1)
