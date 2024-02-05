@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
     original_graphs = graphs[pred_main_idx.tolist()]
 
-    run_path = f'./results/{dataset_name}/runs/counterfactuals.pt'
+    run_path = os.path.join(sys.path[0], f'./results/{dataset_name}/runs/counterfactuals.pt')
     counterfactual_rw = torch.load(run_path)
     counterfactuals = []
     candidates = counterfactual_rw['counterfactual_candidates']
