@@ -16,7 +16,7 @@ sys.path.append(parent_dir1)
 def load_ogbg(dataset, padded=True):
     #data = preprocess_ogbg(dataset, padded=True)
 
-    with open('../dataset/ogbg_molhiv_full.pickle', 'rb') as handle:
+    with open(os.path.join(sys.path[0],'..','dataset/ogbg_molhiv_full.pickle'), 'rb') as handle:
         data = pickle.load(handle)['data']
     return data
 
@@ -258,7 +258,7 @@ def load_community(dataset, padded=False):
     n = 10000
     max_num_nodes = 20
 
-    with open('../dataset/syn_data.pickle', 'rb') as handle:
+    with open(os.path.join(sys.path[0],'..','dataset/syn_data.pickle'), 'rb') as handle:
         data = pickle.load(handle)['data']
 
     return data
