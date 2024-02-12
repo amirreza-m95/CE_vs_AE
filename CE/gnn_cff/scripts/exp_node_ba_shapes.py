@@ -10,7 +10,16 @@ import sys
 #   export PYTHONPATH=$PYTHONPATH:"$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # export PYTHONPATH=$PYTHONPATH:"$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/CE/gnn_cff"
 
+from contextlib import contextmanager
+from time import time, sleep
 
+@contextmanager
+def timer():
+    start_time = time()
+    yield
+    end_time = time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time: {elapsed_time} seconds")
 
 
 from utils.utils import draw_graph, draw_subgraph_around_node, get_masked_graph, save_graph, draw_graph_from_tensorAdj
@@ -56,4 +65,5 @@ def mainCF2_shapesXp():
 
 
 if __name__ == "__main__":
-    mainCF2_shapesXp()
+    with timer():
+        mainCF2_shapesXp()

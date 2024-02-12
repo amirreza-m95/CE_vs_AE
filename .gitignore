@@ -4,6 +4,9 @@ results/*
 CE/gnn_cff/log/*
 Compare/datasets
 Compare/gnn_cff/log
+CE/clear/dataset/*
+CE/cf-gnnexplainer/data/*
+
 
 
 # Byte-compiled / optimized / DLL files
