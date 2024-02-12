@@ -27,7 +27,7 @@ torch.backends.cudnn.enabled = False
 
 
 parser = argparse.ArgumentParser(description='Graph counterfactual explanation generation')
-parser.add_argument('--nocuda', type=int, default=0, help='Disables CUDA training.')
+parser.add_argument('--nocuda', type=int, default=1, help='Disables CUDA training.')
 parser.add_argument('--batch_size', type=int, default=5000, metavar='N',
                     help='input batch size for training (default: 500)')  # community: 500， ogbg: 5000
 parser.add_argument('--num_workers', type=int, default=0, metavar='N')
@@ -137,7 +137,7 @@ def train(params):
                 val_loss = eval_results_val['loss']
                 if val_loss < best_loss:
                     best_loss = val_loss
-                    path_model = f'../models_save/prediction/weights_graphPred__{args.dataset}.pt'
+                    path_model = os.path.join(sys.path[0], '..', f'models_save/prediction/weights_graphPred__{args.dataset}.pt')
                     torch.save(model.state_dict(), path_model)
                     print('model saved in ', path_model)
 

@@ -104,7 +104,7 @@ def proximity_feature(feat_1, feat_2, type='cos'):
 
 def compute_loss(params):
     model, pred_model, z_mu, z_logvar, adj_permuted, features_permuted, adj_reconst, features_reconst, \
-    adj_input, features_input, y_cf, z_u_mu, z_u_logvar, z_mu_cf, z_logvar_cf = params['model'], params['pred_model'], params['z_mu'], \
+    adj_input, features_input, y_cf, z_u_mu, z_u_logvar, z_mu_cf, z_logvar_cf = params['model'], params['pred_model'].to(device), params['z_mu'], \
         params['z_logvar'], params['adj_permuted'], params['features_permuted'], params['adj_reconst'], params['features_reconst'], \
         params['adj_input'], params['features_input'], params['y_cf'], params['z_u_mu'], params['z_u_logvar'], params['z_mu_cf'], params['z_logvar_cf']
 
@@ -114,16 +114,16 @@ def compute_loss(params):
 
     # similarity loss
     size = len(features_permuted)
-    dist_x = torch.mean(distance_feature(features_permuted.view(size, -1), features_reconst.view(size, -1)))
-    dist_a = distance_graph_prob(adj_permuted, adj_reconst)
+    dist_x = torch.mean(distance_feature(features_permuted.view(size, -1).to(device), features_reconst.view(size, -1).to(device)))
+    dist_a = distance_graph_prob(adj_permuted.to(device), adj_reconst.to(device))
 
     beta = 10
 
     loss_sim = beta * dist_x + 10 * dist_a
-
+    # print(type(pred_model))
     # CFE loss
-    y_pred = pred_model(features_reconst, adj_reconst)['y_pred']  # n x num_class
-    loss_cfe = F.nll_loss(F.log_softmax(y_pred, dim=-1), y_cf.view(-1).long())
+    y_pred = pred_model(features_reconst.to(device), adj_reconst.to(device))['y_pred']
+    loss_cfe = F.nll_loss(F.log_softmax(y_pred, dim=-1), y_cf.view(-1).long().to(device))
 
     # rep loss
     if z_mu_cf is None:
@@ -140,10 +140,13 @@ def compute_loss(params):
 
 def train(params):
     epochs, pred_model, model, optimizer, y_cf_all, train_loader, val_loader, test_loader, exp_i, dataset, metrics, variant = \
-        params['epochs'], params['pred_model'], params['model'], params['optimizer'], params['y_cf'],\
+        params['epochs'], params['pred_model'].to(device), params['model'].to(device), params['optimizer'], params['y_cf'],\
         params['train_loader'], params['val_loader'], params['test_loader'], params['exp_i'], params['dataset'], params['metrics'], params['variant']
     save_model = params['save_model'] if 'save_model' in params else True
     print("start training!")
+    model = model.to(device)
+    pred_model = pred_model.to(device)
+
 
     time_begin = time.time()
     best_loss = 100000
@@ -165,7 +168,7 @@ def train(params):
             optimizer.zero_grad()
 
             # forward pass
-            model_return = model(features, u, adj, y_cf)
+            model_return = model(features, u, adj, y_cf.to(device))
 
             # z_cf
             z_mu_cf, z_logvar_cf = model.get_represent(model_return['features_reconst'], u, model_return['adj_reconst'], y_cf)
