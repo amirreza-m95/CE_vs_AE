@@ -1,0 +1,767 @@
+/home/amir.reza/CE_vs_AE/cevsaevenv/lib/python3.10/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/amir.reza/CE_vs_AE/CE/cf-gnnexplainer/src/cf_explanation/cf_explainer.py:99: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(self.cf_model.parameters(), 2.0)
+Namespace(dataset='syn1', hidden=20, n_layers=3, dropout=0.0, seed=42, lr=0.01, optimizer='SGD', n_momentum=0.9, beta=0.5, num_epochs=500, device='cpu')
+y_true counts: (array([0, 1, 2, 3]), array([300, 160, 160,  80]))
+y_pred_orig counts: (array([0, 1, 2, 3]), array([300, 166, 144,  90]))
+tensor(563)
+Output original model, full adj: tensor([-5.9931, -1.9840, -0.4978, -1.3780], requires_grad=True)
+Output original model, sub adj: tensor([-5.9931, -1.9840, -0.4978, -1.3780])
+0 CF examples for node_idx = 563
+Time for 500 epochs of one example: 0.2155min
+tensor(415)
+Output original model, full adj: tensor([-3.8927, -0.0617, -4.9179, -3.4377], requires_grad=True)
+Output original model, sub adj: tensor([-3.8927, -0.0617, -4.9179, -3.4377])
+1 CF examples for node_idx = 415
+Time for 500 epochs of one example: 0.9230min
+tensor(605)
+Output original model, full adj: tensor([-5.1557, -0.0264, -4.8739, -4.3711], requires_grad=True)
+Output original model, sub adj: tensor([-5.1557, -0.0264, -4.8739, -4.3711])
+1 CF examples for node_idx = 605
+Time for 500 epochs of one example: 1.5588min
+tensor(320)
+Output original model, full adj: tensor([-2.8295, -0.1164, -5.5092, -3.0627], requires_grad=True)
+Output original model, sub adj: tensor([-2.8295, -0.1164, -5.5092, -3.0627])
+1 CF examples for node_idx = 320
+Time for 500 epochs of one example: 2.4014min
+tensor(232)
+Output original model, full adj: tensor([ -0.0191,  -9.8961, -12.3036,  -3.9701], requires_grad=True)
+Output original model, sub adj: tensor([ -0.0191,  -9.8961, -12.3036,  -3.9701])
+1 CF examples for node_idx = 232
+Time for 500 epochs of one example: 3.3070min
+tensor(597)
+Output original model, full adj: tensor([-5.2144, -1.3773, -0.7300, -1.3455], requires_grad=True)
+Output original model, sub adj: tensor([-5.2144, -1.3773, -0.7300, -1.3455])
+0 CF examples for node_idx = 597
+Time for 500 epochs of one example: 3.3663min
+tensor(345)
+Output original model, full adj: tensor([-2.8199, -0.1218, -4.8621, -3.0516], requires_grad=True)
+Output original model, sub adj: tensor([-2.8199, -0.1218, -4.8621, -3.0516])
+1 CF examples for node_idx = 345
+Time for 500 epochs of one example: 4.0865min
+tensor(214)
+Output original model, full adj: tensor([-2.2292e-05, -1.8350e+01, -2.6820e+01, -1.0710e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.2292e-05, -1.8350e+01, -2.6820e+01, -1.0710e+01])
+0 CF examples for node_idx = 214
+Time for 500 epochs of one example: 5.0960min
+tensor(367)
+Output original model, full adj: tensor([-7.5903, -1.5664, -0.3646, -2.3411], requires_grad=True)
+Output original model, sub adj: tensor([-7.5903, -1.5664, -0.3646, -2.3411])
+0 CF examples for node_idx = 367
+Time for 500 epochs of one example: 5.1702min
+tensor(206)
+Output original model, full adj: tensor([ -0.0276,  -8.7623, -11.1916,  -3.6085], requires_grad=True)
+Output original model, sub adj: tensor([ -0.0276,  -8.7623, -11.1916,  -3.6085])
+1 CF examples for node_idx = 206
+Time for 500 epochs of one example: 6.0112min
+tensor(110)
+Output original model, full adj: tensor([-2.2769e-05, -1.7836e+01, -2.6772e+01, -1.0690e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.2769e-05, -1.7836e+01, -2.6772e+01, -1.0690e+01])
+0 CF examples for node_idx = 110
+Time for 500 epochs of one example: 7.0492min
+tensor(15)
+Output original model, full adj: tensor([-1.1921e-07, -1.6516e+01, -4.9077e+01, -2.6078e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1921e-07, -1.6516e+01, -4.9077e+01, -2.6078e+01])
+0 CF examples for node_idx = 15
+Time for 500 epochs of one example: 8.2916min
+tensor(310)
+Output original model, full adj: tensor([-2.5938, -0.1510, -5.1610, -2.8190], requires_grad=True)
+Output original model, sub adj: tensor([-2.5938, -0.1510, -5.1610, -2.8190])
+1 CF examples for node_idx = 310
+Time for 500 epochs of one example: 9.1506min
+tensor(245)
+Output original model, full adj: tensor([-5.1703e-03, -1.5008e+01, -1.7651e+01, -5.2675e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-5.1703e-03, -1.5008e+01, -1.7651e+01, -5.2675e+00])
+1 CF examples for node_idx = 245
+Time for 500 epochs of one example: 10.0653min
+tensor(496)
+Output original model, full adj: tensor([-6.1744, -0.0805, -3.0364, -3.6035], requires_grad=True)
+Output original model, sub adj: tensor([-6.1744, -0.0805, -3.0364, -3.6035])
+1 CF examples for node_idx = 496
+Time for 500 epochs of one example: 10.3073min
+tensor(13)
+Output original model, full adj: tensor([  0.0000, -18.5523, -49.3375, -25.7393], requires_grad=True)
+Output original model, sub adj: tensor([  0.0000, -18.5523, -49.3375, -25.7393])
+0 CF examples for node_idx = 13
+Time for 500 epochs of one example: 11.5578min
+tensor(215)
+Output original model, full adj: tensor([-2.6551e-03, -7.0581e+00, -1.4310e+01, -6.3253e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.6551e-03, -7.0581e+00, -1.4310e+01, -6.3253e+00])
+1 CF examples for node_idx = 215
+Time for 500 epochs of one example: 12.3786min
+tensor(298)
+Output original model, full adj: tensor([-1.4617e-03, -1.6028e+01, -1.9449e+01, -6.5289e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.4617e-03, -1.6028e+01, -1.9449e+01, -6.5289e+00])
+0 CF examples for node_idx = 298
+Time for 500 epochs of one example: 13.2474min
+tensor(671)
+Output original model, full adj: tensor([-5.4066, -0.0625, -3.6377, -3.5132], requires_grad=True)
+Output original model, sub adj: tensor([-5.4066, -0.0625, -3.6377, -3.5132])
+1 CF examples for node_idx = 671
+Time for 500 epochs of one example: 13.4152min
+tensor(451)
+Output original model, full adj: tensor([-5.8688, -0.0813, -3.1083, -3.4878], requires_grad=True)
+Output original model, sub adj: tensor([-5.8688, -0.0813, -3.1083, -3.4878])
+1 CF examples for node_idx = 451
+Time for 500 epochs of one example: 13.6333min
+tensor(464)
+Output original model, full adj: tensor([-3.2619, -2.5442, -1.8905, -0.3118], requires_grad=True)
+Output original model, sub adj: tensor([-3.2619, -2.5442, -1.8905, -0.3118])
+1 CF examples for node_idx = 464
+Time for 500 epochs of one example: 13.9094min
+tensor(607)
+Output original model, full adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896], requires_grad=True)
+Output original model, sub adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896])
+0 CF examples for node_idx = 607
+Time for 500 epochs of one example: 13.9632min
+tensor(562)
+Output original model, full adj: tensor([-6.9582, -1.4646, -0.4458, -2.0593], requires_grad=True)
+Output original model, sub adj: tensor([-6.9582, -1.4646, -0.4458, -2.0593])
+0 CF examples for node_idx = 562
+Time for 500 epochs of one example: 14.0261min
+tensor(498)
+Output original model, full adj: tensor([-6.2405, -1.9827, -0.4572, -1.4816], requires_grad=True)
+Output original model, sub adj: tensor([-6.2405, -1.9827, -0.4572, -1.4816])
+0 CF examples for node_idx = 498
+Time for 500 epochs of one example: 14.2697min
+tensor(456)
+Output original model, full adj: tensor([-6.2755, -0.0783, -3.0443, -3.6565], requires_grad=True)
+Output original model, sub adj: tensor([-6.2755, -0.0783, -3.0443, -3.6565])
+1 CF examples for node_idx = 456
+Time for 500 epochs of one example: 14.4768min
+tensor(218)
+Output original model, full adj: tensor([ -0.1037, -10.4631, -10.3195,  -2.3183], requires_grad=True)
+Output original model, sub adj: tensor([ -0.1037, -10.4631, -10.3195,  -2.3183])
+1 CF examples for node_idx = 218
+Time for 500 epochs of one example: 15.3018min
+tensor(688)
+Output original model, full adj: tensor([-5.3862, -1.6372, -0.7074, -1.1777], requires_grad=True)
+Output original model, sub adj: tensor([-5.3862, -1.6372, -0.7074, -1.1777])
+1 CF examples for node_idx = 688
+Time for 500 epochs of one example: 15.5018min
+tensor(151)
+Output original model, full adj: tensor([-1.3828e-05, -2.4667e+01, -3.0748e+01, -1.1191e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.3828e-05, -2.4667e+01, -3.0748e+01, -1.1191e+01])
+0 CF examples for node_idx = 151
+Time for 500 epochs of one example: 16.5326min
+tensor(419)
+Output original model, full adj: tensor([-3.2011, -2.7927, -1.8957, -0.2906], requires_grad=True)
+Output original model, sub adj: tensor([-3.2011, -2.7927, -1.8957, -0.2906])
+1 CF examples for node_idx = 419
+Time for 500 epochs of one example: 16.8150min
+tensor(228)
+Output original model, full adj: tensor([-4.1177e-03, -1.0198e+01, -1.5548e+01, -5.5037e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-4.1177e-03, -1.0198e+01, -1.5548e+01, -5.5037e+00])
+1 CF examples for node_idx = 228
+Time for 500 epochs of one example: 17.6922min
+tensor(202)
+Output original model, full adj: tensor([-2.3768e-04, -1.9953e+01, -2.4443e+01, -8.3450e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.3768e-04, -1.9953e+01, -2.4443e+01, -8.3450e+00])
+0 CF examples for node_idx = 202
+Time for 500 epochs of one example: 18.6792min
+tensor(92)
+Output original model, full adj: tensor([-7.6529e-05, -1.9739e+01, -2.5039e+01, -9.4778e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-7.6529e-05, -1.9739e+01, -2.5039e+01, -9.4778e+00])
+0 CF examples for node_idx = 92
+Time for 500 epochs of one example: 19.5843min
+tensor(537)
+Output original model, full adj: tensor([-6.9582, -1.4646, -0.4458, -2.0593], requires_grad=True)
+Output original model, sub adj: tensor([-6.9582, -1.4646, -0.4458, -2.0593])
+0 CF examples for node_idx = 537
+Time for 500 epochs of one example: 19.6470min
+tensor(425)
+Output original model, full adj: tensor([-3.6910, -0.2109, -2.8987, -2.2066], requires_grad=True)
+Output original model, sub adj: tensor([-3.6910, -0.2109, -2.8987, -2.2066])
+1 CF examples for node_idx = 425
+Time for 500 epochs of one example: 20.3558min
+tensor(100)
+Output original model, full adj: tensor([-1.2862e-04, -1.6688e+01, -2.3624e+01, -8.9587e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.2862e-04, -1.6688e+01, -2.3624e+01, -8.9587e+00])
+0 CF examples for node_idx = 100
+Time for 500 epochs of one example: 21.3671min
+tensor(616)
+Output original model, full adj: tensor([-5.7316, -0.0651, -3.4404, -3.5853], requires_grad=True)
+Output original model, sub adj: tensor([-5.7316, -0.0651, -3.4404, -3.5853])
+1 CF examples for node_idx = 616
+Time for 500 epochs of one example: 21.6419min
+tensor(672)
+Output original model, full adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796], requires_grad=True)
+Output original model, sub adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796])
+0 CF examples for node_idx = 672
+Time for 500 epochs of one example: 21.6944min
+tensor(35)
+Output original model, full adj: tensor([-3.9339e-06, -1.6261e+01, -2.8700e+01, -1.2488e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-3.9339e-06, -1.6261e+01, -2.8700e+01, -1.2488e+01])
+0 CF examples for node_idx = 35
+Time for 500 epochs of one example: 22.7060min
+tensor(487)
+Output original model, full adj: tensor([-6.5115, -1.4015, -0.5150, -1.8660], requires_grad=True)
+Output original model, sub adj: tensor([-6.5115, -1.4015, -0.5150, -1.8660])
+0 CF examples for node_idx = 487
+Time for 500 epochs of one example: 22.7632min
+tensor(167)
+Output original model, full adj: tensor([-1.3112e-02, -1.2694e+01, -1.4184e+01, -4.3410e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.3112e-02, -1.2694e+01, -1.4184e+01, -4.3410e+00])
+1 CF examples for node_idx = 167
+Time for 500 epochs of one example: 23.6358min
+tensor(219)
+Output original model, full adj: tensor([-1.1846e-02, -9.1607e+00, -1.3312e+01, -4.4508e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1846e-02, -9.1607e+00, -1.3312e+01, -4.4508e+00])
+1 CF examples for node_idx = 219
+Time for 500 epochs of one example: 24.5174min
+tensor(1)
+Output original model, full adj: tensor([-5.9605e-07, -1.4408e+01, -4.6752e+01, -2.5514e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-5.9605e-07, -1.4408e+01, -4.6752e+01, -2.5514e+01])
+0 CF examples for node_idx = 1
+Time for 500 epochs of one example: 25.7312min
+tensor(560)
+Output original model, full adj: tensor([-4.4084, -0.0442, -4.8606, -3.7577], requires_grad=True)
+Output original model, sub adj: tensor([-4.4084, -0.0442, -4.8606, -3.7577])
+1 CF examples for node_idx = 560
+Time for 500 epochs of one example: 26.4403min
+tensor(414)
+Output original model, full adj: tensor([-3.6657, -2.5258, -1.5950, -0.3689], requires_grad=True)
+Output original model, sub adj: tensor([-3.6657, -2.5258, -1.5950, -0.3689])
+1 CF examples for node_idx = 414
+Time for 500 epochs of one example: 26.7312min
+tensor(208)
+Output original model, full adj: tensor([-6.2351e-04, -1.7754e+01, -2.1858e+01, -7.3804e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-6.2351e-04, -1.7754e+01, -2.1858e+01, -7.3804e+00])
+0 CF examples for node_idx = 208
+Time for 500 epochs of one example: 27.6914min
+tensor(209)
+Output original model, full adj: tensor([-1.1754e-03, -1.4077e+01, -1.8651e+01, -6.7473e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1754e-03, -1.4077e+01, -1.8651e+01, -6.7473e+00])
+0 CF examples for node_idx = 209
+Time for 500 epochs of one example: 28.6259min
+tensor(294)
+Output original model, full adj: tensor([-5.0365e-04, -1.8224e+01, -2.2088e+01, -7.5939e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-5.0365e-04, -1.8224e+01, -2.2088e+01, -7.5939e+00])
+0 CF examples for node_idx = 294
+Time for 500 epochs of one example: 29.5753min
+tensor(604)
+Output original model, full adj: tensor([-2.2042, -2.7459, -2.8482, -0.2646], requires_grad=True)
+Output original model, sub adj: tensor([-2.2042, -2.7459, -2.8482, -0.2646])
+1 CF examples for node_idx = 604
+Time for 500 epochs of one example: 29.8265min
+tensor(643)
+Output original model, full adj: tensor([-5.8223, -1.7411, -0.5820, -1.3359], requires_grad=True)
+Output original model, sub adj: tensor([-5.8223, -1.7411, -0.5820, -1.3359])
+1 CF examples for node_idx = 643
+Time for 500 epochs of one example: 30.0353min
+tensor(617)
+Output original model, full adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896], requires_grad=True)
+Output original model, sub adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896])
+0 CF examples for node_idx = 617
+Time for 500 epochs of one example: 30.0888min
+tensor(142)
+Output original model, full adj: tensor([-7.2000e-05, -1.0047e+01, -2.2512e+01, -1.0459e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-7.2000e-05, -1.0047e+01, -2.2512e+01, -1.0459e+01])
+0 CF examples for node_idx = 142
+Time for 500 epochs of one example: 31.1068min
+tensor(28)
+Output original model, full adj: tensor([-1.5497e-06, -1.3358e+01, -4.7357e+01, -2.6043e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.5497e-06, -1.3358e+01, -4.7357e+01, -2.6043e+01])
+0 CF examples for node_idx = 28
+Time for 500 epochs of one example: 32.3191min
+tensor(172)
+Output original model, full adj: tensor([-2.5098e-03, -1.2835e+01, -1.6730e+01, -5.9898e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.5098e-03, -1.2835e+01, -1.6730e+01, -5.9898e+00])
+1 CF examples for node_idx = 172
+Time for 500 epochs of one example: 33.1760min
+tensor(385)
+Output original model, full adj: tensor([-3.2051, -0.0992, -4.6819, -3.1091], requires_grad=True)
+Output original model, sub adj: tensor([-3.2051, -0.0992, -4.6819, -3.1091])
+1 CF examples for node_idx = 385
+Time for 500 epochs of one example: 33.9100min
+tensor(508)
+Output original model, full adj: tensor([-6.5250, -1.9459, -0.4236, -1.6045], requires_grad=True)
+Output original model, sub adj: tensor([-6.5250, -1.9459, -0.4236, -1.6045])
+0 CF examples for node_idx = 508
+Time for 500 epochs of one example: 34.1329min
+tensor(226)
+Output original model, full adj: tensor([-4.2549e-04, -1.6393e+01, -2.1257e+01, -7.7629e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-4.2549e-04, -1.6393e+01, -2.1257e+01, -7.7629e+00])
+0 CF examples for node_idx = 226
+Time for 500 epochs of one example: 35.0889min
+tensor(542)
+Output original model, full adj: tensor([-7.0757, -1.4825, -0.4293, -2.1110], requires_grad=True)
+Output original model, sub adj: tensor([-7.0757, -1.4825, -0.4293, -2.1110])
+0 CF examples for node_idx = 542
+Time for 500 epochs of one example: 35.1506min
+tensor(164)
+Output original model, full adj: tensor([-8.2373e-03, -6.3516e+00, -1.2937e+01, -5.0426e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-8.2373e-03, -6.3516e+00, -1.2937e+01, -5.0426e+00])
+1 CF examples for node_idx = 164
+Time for 500 epochs of one example: 36.0836min
+tensor(74)
+Output original model, full adj: tensor([-3.1673e-03, -5.7566e+00, -2.6934e+01, -1.4680e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-3.1673e-03, -5.7566e+00, -2.6934e+01, -1.4680e+01])
+0 CF examples for node_idx = 74
+Time for 500 epochs of one example: 37.1113min
+tensor(471)
+Output original model, full adj: tensor([-4.7240, -0.2057, -2.5138, -2.3421], requires_grad=True)
+Output original model, sub adj: tensor([-4.7240, -0.2057, -2.5138, -2.3421])
+1 CF examples for node_idx = 471
+Time for 500 epochs of one example: 37.4091min
+tensor(667)
+Output original model, full adj: tensor([-7.2628, -2.5524, -0.2492, -1.9519], requires_grad=True)
+Output original model, sub adj: tensor([-7.2628, -2.5524, -0.2492, -1.9519])
+0 CF examples for node_idx = 667
+Time for 500 epochs of one example: 37.7747min
+tensor(41)
+Output original model, full adj: tensor([-1.0729e-06, -1.3704e+01, -3.6879e+01, -1.8860e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.0729e-06, -1.3704e+01, -3.6879e+01, -1.8860e+01])
+0 CF examples for node_idx = 41
+Time for 500 epochs of one example: 38.9343min
+tensor(558)
+Output original model, full adj: tensor([-6.3748, -1.9268, -0.4489, -1.5402], requires_grad=True)
+Output original model, sub adj: tensor([-6.3748, -1.9268, -0.4489, -1.5402])
+0 CF examples for node_idx = 558
+Time for 500 epochs of one example: 39.1728min
+tensor(462)
+Output original model, full adj: tensor([-6.5115, -1.4015, -0.5150, -1.8660], requires_grad=True)
+Output original model, sub adj: tensor([-6.5115, -1.4015, -0.5150, -1.8660])
+0 CF examples for node_idx = 462
+Time for 500 epochs of one example: 39.2304min
+tensor(2)
+Output original model, full adj: tensor([-1.1921e-07, -1.6583e+01, -4.6323e+01, -2.4354e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1921e-07, -1.6583e+01, -4.6323e+01, -2.4354e+01])
+0 CF examples for node_idx = 2
+Time for 500 epochs of one example: 40.4294min
+tensor(473)
+Output original model, full adj: tensor([-4.1497, -2.6662, -1.2389, -0.4700], requires_grad=True)
+Output original model, sub adj: tensor([-4.1497, -2.6662, -1.2389, -0.4700])
+1 CF examples for node_idx = 473
+Time for 500 epochs of one example: 40.7268min
+tensor(412)
+Output original model, full adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020], requires_grad=True)
+Output original model, sub adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020])
+0 CF examples for node_idx = 412
+Time for 500 epochs of one example: 40.7875min
+tensor(364)
+Output original model, full adj: tensor([-3.3591, -2.7073, -1.7850, -0.3137], requires_grad=True)
+Output original model, sub adj: tensor([-3.3591, -2.7073, -1.7850, -0.3137])
+1 CF examples for node_idx = 364
+Time for 500 epochs of one example: 41.1259min
+tensor(250)
+Output original model, full adj: tensor([-5.5707e-03, -1.2966e+01, -1.5854e+01, -5.1935e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-5.5707e-03, -1.2966e+01, -1.5854e+01, -5.1935e+00])
+1 CF examples for node_idx = 250
+Time for 500 epochs of one example: 42.0151min
+tensor(253)
+Output original model, full adj: tensor([-7.0844e-03, -1.3444e+01, -1.6462e+01, -4.9536e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-7.0844e-03, -1.3444e+01, -1.6462e+01, -4.9536e+00])
+1 CF examples for node_idx = 253
+Time for 500 epochs of one example: 42.9809min
+tensor(274)
+Output original model, full adj: tensor([-9.0951e-04, -1.5094e+01, -1.9653e+01, -7.0034e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-9.0951e-04, -1.5094e+01, -1.9653e+01, -7.0034e+00])
+0 CF examples for node_idx = 274
+Time for 500 epochs of one example: 43.9279min
+tensor(349)
+Output original model, full adj: tensor([-3.6444, -2.5319, -1.6096, -0.3647], requires_grad=True)
+Output original model, sub adj: tensor([-3.6444, -2.5319, -1.6096, -0.3647])
+1 CF examples for node_idx = 349
+Time for 500 epochs of one example: 44.2792min
+tensor(143)
+Output original model, full adj: tensor([-3.0835e-04, -1.5156e+01, -2.1386e+01, -8.0851e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-3.0835e-04, -1.5156e+01, -2.1386e+01, -8.0851e+00])
+0 CF examples for node_idx = 143
+Time for 500 epochs of one example: 45.2582min
+tensor(105)
+Output original model, full adj: tensor([-7.2596e-05, -1.2683e+01, -2.3031e+01, -9.5749e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-7.2596e-05, -1.2683e+01, -2.3031e+01, -9.5749e+00])
+0 CF examples for node_idx = 105
+Time for 500 epochs of one example: 46.2572min
+tensor(5)
+Output original model, full adj: tensor([-9.5367e-07, -1.3836e+01, -7.1118e+01, -4.2257e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-9.5367e-07, -1.3836e+01, -7.1118e+01, -4.2257e+01])
+0 CF examples for node_idx = 5
+Time for 500 epochs of one example: 47.5720min
+tensor(429)
+Output original model, full adj: tensor([-2.8684, -1.2059, -2.1744, -0.6346], requires_grad=True)
+Output original model, sub adj: tensor([-2.8684, -1.2059, -2.1744, -0.6346])
+1 CF examples for node_idx = 429
+Time for 500 epochs of one example: 48.0845min
+tensor(609)
+Output original model, full adj: tensor([-2.7700, -2.6212, -2.3201, -0.2661], requires_grad=True)
+Output original model, sub adj: tensor([-2.7700, -2.6212, -2.3201, -0.2661])
+1 CF examples for node_idx = 609
+Time for 500 epochs of one example: 48.2842min
+tensor(581)
+Output original model, full adj: tensor([-5.7569, -0.0654, -3.4271, -3.5891], requires_grad=True)
+Output original model, sub adj: tensor([-5.7569, -0.0654, -3.4271, -3.5891])
+1 CF examples for node_idx = 581
+Time for 500 epochs of one example: 48.5037min
+tensor(402)
+Output original model, full adj: tensor([-6.3180, -1.3767, -0.5485, -1.7840], requires_grad=True)
+Output original model, sub adj: tensor([-6.3180, -1.3767, -0.5485, -1.7840])
+0 CF examples for node_idx = 402
+Time for 500 epochs of one example: 48.5573min
+tensor(200)
+Output original model, full adj: tensor([-2.0240e-04, -1.0180e+01, -1.9737e+01, -8.7125e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.0240e-04, -1.0180e+01, -1.9737e+01, -8.7125e+00])
+0 CF examples for node_idx = 200
+Time for 500 epochs of one example: 49.5606min
+tensor(589)
+Output original model, full adj: tensor([-2.6363, -2.8963, -2.4698, -0.2376], requires_grad=True)
+Output original model, sub adj: tensor([-2.6363, -2.8963, -2.4698, -0.2376])
+1 CF examples for node_idx = 589
+Time for 500 epochs of one example: 50.2206min
+tensor(444)
+Output original model, full adj: tensor([-3.3310, -2.6448, -1.8231, -0.3124], requires_grad=True)
+Output original model, sub adj: tensor([-3.3310, -2.6448, -1.8231, -0.3124])
+1 CF examples for node_idx = 444
+Time for 500 epochs of one example: 50.4586min
+tensor(574)
+Output original model, full adj: tensor([-3.0878, -2.5746, -2.0467, -0.2889], requires_grad=True)
+Output original model, sub adj: tensor([-3.0878, -2.5746, -2.0467, -0.2889])
+1 CF examples for node_idx = 574
+Time for 500 epochs of one example: 50.6305min
+tensor(44)
+Output original model, full adj: tensor([-1.7762e-05, -1.9459e+01, -2.7900e+01, -1.0942e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.7762e-05, -1.9459e+01, -2.7900e+01, -1.0942e+01])
+0 CF examples for node_idx = 44
+Time for 500 epochs of one example: 51.6780min
+tensor(630)
+Output original model, full adj: tensor([-4.4846, -0.0274, -5.5657, -4.4311], requires_grad=True)
+Output original model, sub adj: tensor([-4.4846, -0.0274, -5.5657, -4.4311])
+1 CF examples for node_idx = 630
+Time for 500 epochs of one example: 52.3062min
+tensor(176)
+Output original model, full adj: tensor([-2.5149e-03, -1.5200e+01, -1.8720e+01, -5.9869e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.5149e-03, -1.5200e+01, -1.8720e+01, -5.9869e+00])
+0 CF examples for node_idx = 176
+Time for 500 epochs of one example: 53.2548min
+tensor(512)
+Output original model, full adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896], requires_grad=True)
+Output original model, sub adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896])
+0 CF examples for node_idx = 512
+Time for 500 epochs of one example: 53.3093min
+tensor(697)
+Output original model, full adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796], requires_grad=True)
+Output original model, sub adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796])
+0 CF examples for node_idx = 697
+Time for 500 epochs of one example: 53.3621min
+tensor(235)
+Output original model, full adj: tensor([-8.3340e-04, -1.7204e+01, -2.1470e+01, -7.0904e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-8.3340e-04, -1.7204e+01, -2.1470e+01, -7.0904e+00])
+0 CF examples for node_idx = 235
+Time for 500 epochs of one example: 54.3180min
+tensor(205)
+Output original model, full adj: tensor([-9.7930e-04, -1.4762e+01, -1.9452e+01, -6.9295e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-9.7930e-04, -1.4762e+01, -1.9452e+01, -6.9295e+00])
+0 CF examples for node_idx = 205
+Time for 500 epochs of one example: 55.2443min
+tensor(262)
+Output original model, full adj: tensor([-1.9073e-05, -2.3777e+01, -2.9845e+01, -1.0866e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.9073e-05, -2.3777e+01, -2.9845e+01, -1.0866e+01])
+0 CF examples for node_idx = 262
+Time for 500 epochs of one example: 56.2135min
+tensor(600)
+Output original model, full adj: tensor([-3.3571, -0.0551, -6.0495, -4.1106], requires_grad=True)
+Output original model, sub adj: tensor([-3.3571, -0.0551, -6.0495, -4.1106])
+1 CF examples for node_idx = 600
+Time for 500 epochs of one example: 56.8843min
+tensor(242)
+Output original model, full adj: tensor([-1.4948e-04, -2.0427e+01, -2.5079e+01, -8.8082e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.4948e-04, -2.0427e+01, -2.5079e+01, -8.8082e+00])
+0 CF examples for node_idx = 242
+Time for 500 epochs of one example: 57.8545min
+tensor(103)
+Output original model, full adj: tensor([-9.8700e-05, -1.4170e+01, -2.2791e+01, -9.2301e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-9.8700e-05, -1.4170e+01, -2.2791e+01, -9.2301e+00])
+0 CF examples for node_idx = 103
+Time for 500 epochs of one example: 58.8602min
+tensor(63)
+Output original model, full adj: tensor([-1.6449e-03, -6.4109e+00, -3.2491e+01, -1.8077e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.6449e-03, -6.4109e+00, -3.2491e+01, -1.8077e+01])
+0 CF examples for node_idx = 63
+Time for 500 epochs of one example: 59.9987min
+tensor(33)
+Output original model, full adj: tensor([-1.4399e-04, -8.8456e+00, -3.4089e+01, -1.8591e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.4399e-04, -8.8456e+00, -3.4089e+01, -1.8591e+01])
+0 CF examples for node_idx = 33
+Time for 500 epochs of one example: 61.1092min
+tensor(490)
+Output original model, full adj: tensor([-3.1775, -0.1312, -4.4732, -2.6616], requires_grad=True)
+Output original model, sub adj: tensor([-3.1775, -0.1312, -4.4732, -2.6616])
+1 CF examples for node_idx = 490
+Time for 500 epochs of one example: 61.7696min
+tensor(582)
+Output original model, full adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896], requires_grad=True)
+Output original model, sub adj: tensor([-6.0919, -1.3501, -0.5907, -1.6896])
+0 CF examples for node_idx = 582
+Time for 500 epochs of one example: 61.8237min
+tensor(670)
+Output original model, full adj: tensor([-5.3282, -0.0193, -5.2547, -4.7059], requires_grad=True)
+Output original model, sub adj: tensor([-5.3282, -0.0193, -5.2547, -4.7059])
+1 CF examples for node_idx = 670
+Time for 500 epochs of one example: 62.4456min
+tensor(649)
+Output original model, full adj: tensor([-3.4399, -3.1237, -1.9079, -0.2542], requires_grad=True)
+Output original model, sub adj: tensor([-3.4399, -3.1237, -1.9079, -0.2542])
+1 CF examples for node_idx = 649
+Time for 500 epochs of one example: 62.7950min
+tensor(184)
+Output original model, full adj: tensor([-2.4362e-03, -1.1197e+01, -1.6473e+01, -6.0242e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.4362e-03, -1.1197e+01, -1.6473e+01, -6.0242e+00])
+0 CF examples for node_idx = 184
+Time for 500 epochs of one example: 63.7403min
+tensor(610)
+Output original model, full adj: tensor([-5.7548, -0.0231, -4.6696, -4.5727], requires_grad=True)
+Output original model, sub adj: tensor([-5.7548, -0.0231, -4.6696, -4.5727])
+1 CF examples for node_idx = 610
+Time for 500 epochs of one example: 64.3107min
+tensor(272)
+Output original model, full adj: tensor([-1.1365e-03, -1.6212e+01, -2.0144e+01, -6.7805e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1365e-03, -1.6212e+01, -2.0144e+01, -6.7805e+00])
+0 CF examples for node_idx = 272
+Time for 500 epochs of one example: 65.2093min
+tensor(497)
+Output original model, full adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020], requires_grad=True)
+Output original model, sub adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020])
+0 CF examples for node_idx = 497
+Time for 500 epochs of one example: 65.2696min
+tensor(573)
+Output original model, full adj: tensor([-6.3174, -1.8718, -0.4692, -1.5195], requires_grad=True)
+Output original model, sub adj: tensor([-6.3174, -1.8718, -0.4692, -1.5195])
+0 CF examples for node_idx = 573
+Time for 500 epochs of one example: 65.4413min
+tensor(330)
+Output original model, full adj: tensor([-3.0828, -0.1028, -5.2099, -3.0704], requires_grad=True)
+Output original model, sub adj: tensor([-3.0828, -0.1028, -5.2099, -3.0704])
+1 CF examples for node_idx = 330
+Time for 500 epochs of one example: 66.2624min
+tensor(647)
+Output original model, full adj: tensor([-6.9250, -1.5770, -0.4084, -2.0581], requires_grad=True)
+Output original model, sub adj: tensor([-6.9250, -1.5770, -0.4084, -2.0581])
+0 CF examples for node_idx = 647
+Time for 500 epochs of one example: 66.3315min
+tensor(254)
+Output original model, full adj: tensor([-2.6464e-05, -2.2090e+01, -2.9046e+01, -1.0539e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.6464e-05, -2.2090e+01, -2.9046e+01, -1.0539e+01])
+0 CF examples for node_idx = 254
+Time for 500 epochs of one example: 67.3474min
+tensor(447)
+Output original model, full adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020], requires_grad=True)
+Output original model, sub adj: tensor([-6.8271, -1.4452, -0.4650, -2.0020])
+0 CF examples for node_idx = 447
+Time for 500 epochs of one example: 67.4077min
+tensor(516)
+Output original model, full adj: tensor([-5.8231, -0.0661, -3.3923, -3.5993], requires_grad=True)
+Output original model, sub adj: tensor([-5.8231, -0.0661, -3.3923, -3.5993])
+1 CF examples for node_idx = 516
+Time for 500 epochs of one example: 67.5984min
+tensor(211)
+Output original model, full adj: tensor([-7.1595e-04, -1.4791e+01, -1.9928e+01, -7.2428e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-7.1595e-04, -1.4791e+01, -1.9928e+01, -7.2428e+00])
+0 CF examples for node_idx = 211
+Time for 500 epochs of one example: 68.5613min
+tensor(619)
+Output original model, full adj: tensor([-2.6581, -2.6373, -2.4057, -0.2638], requires_grad=True)
+Output original model, sub adj: tensor([-2.6581, -2.6373, -2.4057, -0.2638])
+1 CF examples for node_idx = 619
+Time for 500 epochs of one example: 68.8361min
+tensor(305)
+Output original model, full adj: tensor([-4.9503, -0.0124, -6.7447, -5.5108], requires_grad=True)
+Output original model, sub adj: tensor([-4.9503, -0.0124, -6.7447, -5.5108])
+1 CF examples for node_idx = 305
+Time for 500 epochs of one example: 69.4224min
+tensor(545)
+Output original model, full adj: tensor([-4.8223, -0.0228, -5.4738, -4.5757], requires_grad=True)
+Output original model, sub adj: tensor([-4.8223, -0.0228, -5.4738, -4.5757])
+1 CF examples for node_idx = 545
+Time for 500 epochs of one example: 70.0880min
+tensor(404)
+Output original model, full adj: tensor([-2.8636, -2.5932, -2.2023, -0.2776], requires_grad=True)
+Output original model, sub adj: tensor([-2.8636, -2.5932, -2.2023, -0.2776])
+1 CF examples for node_idx = 404
+Time for 500 epochs of one example: 70.3513min
+tensor(265)
+Output original model, full adj: tensor([-3.0804e-03, -1.6030e+01, -1.7905e+01, -5.7843e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-3.0804e-03, -1.6030e+01, -1.7905e+01, -5.7843e+00])
+1 CF examples for node_idx = 265
+Time for 500 epochs of one example: 71.2395min
+tensor(477)
+Output original model, full adj: tensor([-6.3180, -1.3767, -0.5485, -1.7840], requires_grad=True)
+Output original model, sub adj: tensor([-6.3180, -1.3767, -0.5485, -1.7840])
+0 CF examples for node_idx = 477
+Time for 500 epochs of one example: 71.2949min
+tensor(230)
+Output original model, full adj: tensor([-0.1316, -4.9805, -7.8192, -2.1538], requires_grad=True)
+Output original model, sub adj: tensor([-0.1316, -4.9805, -7.8192, -2.1538])
+1 CF examples for node_idx = 230
+Time for 500 epochs of one example: 72.1030min
+tensor(70)
+Output original model, full adj: tensor([-8.4638e-06, -1.1676e+01, -3.5020e+01, -1.8478e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-8.4638e-06, -1.1676e+01, -3.5020e+01, -1.8478e+01])
+0 CF examples for node_idx = 70
+Time for 500 epochs of one example: 73.2177min
+tensor(276)
+Output original model, full adj: tensor([-1.5857e-03, -1.2354e+01, -1.7860e+01, -6.4502e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.5857e-03, -1.2354e+01, -1.7860e+01, -6.4502e+00])
+0 CF examples for node_idx = 276
+Time for 500 epochs of one example: 74.1624min
+tensor(377)
+Output original model, full adj: tensor([-7.3659, -1.5287, -0.3914, -2.2401], requires_grad=True)
+Output original model, sub adj: tensor([-7.3659, -1.5287, -0.3914, -2.2401])
+0 CF examples for node_idx = 377
+Time for 500 epochs of one example: 74.2301min
+tensor(82)
+Output original model, full adj: tensor([-1.0952e-03, -1.2800e+01, -1.8439e+01, -6.8199e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.0952e-03, -1.2800e+01, -1.8439e+01, -6.8199e+00])
+0 CF examples for node_idx = 82
+Time for 500 epochs of one example: 75.1608min
+tensor(99)
+Output original model, full adj: tensor([-5.1044e-04, -7.5807e+00, -2.8595e+01, -1.5726e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-5.1044e-04, -7.5807e+00, -2.8595e+01, -1.5726e+01])
+0 CF examples for node_idx = 99
+Time for 500 epochs of one example: 76.1413min
+tensor(585)
+Output original model, full adj: tensor([-7.0488, -0.0841, -2.7407, -4.1814], requires_grad=True)
+Output original model, sub adj: tensor([-7.0488, -0.0841, -2.7407, -4.1814])
+1 CF examples for node_idx = 585
+Time for 500 epochs of one example: 76.8022min
+tensor(280)
+Output original model, full adj: tensor([-1.0930e-03, -1.6775e+01, -2.0283e+01, -6.8193e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.0930e-03, -1.6775e+01, -2.0283e+01, -6.8193e+00])
+0 CF examples for node_idx = 280
+Time for 500 epochs of one example: 77.7659min
+tensor(455)
+Output original model, full adj: tensor([-5.3087, -0.0403, -4.2056, -3.9298], requires_grad=True)
+Output original model, sub adj: tensor([-5.3087, -0.0403, -4.2056, -3.9298])
+1 CF examples for node_idx = 455
+Time for 500 epochs of one example: 78.4477min
+tensor(371)
+Output original model, full adj: tensor([-6.8230, -0.0888, -2.7836, -3.8115], requires_grad=True)
+Output original model, sub adj: tensor([-6.8230, -0.0888, -2.7836, -3.8115])
+1 CF examples for node_idx = 371
+Time for 500 epochs of one example: 78.7878min
+tensor(292)
+Output original model, full adj: tensor([-2.2624e-03, -1.5933e+01, -1.9265e+01, -6.0925e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.2624e-03, -1.5933e+01, -1.9265e+01, -6.0925e+00])
+0 CF examples for node_idx = 292
+Time for 500 epochs of one example: 79.7716min
+tensor(25)
+Output original model, full adj: tensor([-2.9405e-04, -8.1329e+00, -2.9255e+01, -1.5374e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.9405e-04, -8.1329e+00, -2.9255e+01, -1.5374e+01])
+0 CF examples for node_idx = 25
+Time for 500 epochs of one example: 80.8980min
+tensor(86)
+Output original model, full adj: tensor([-2.3126e-05, -1.7245e+01, -2.6518e+01, -1.0675e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-2.3126e-05, -1.7245e+01, -2.6518e+01, -1.0675e+01])
+0 CF examples for node_idx = 86
+Time for 500 epochs of one example: 81.9115min
+tensor(646)
+Output original model, full adj: tensor([-6.2629, -0.1261, -2.5349, -3.2878], requires_grad=True)
+Output original model, sub adj: tensor([-6.2629, -0.1261, -2.5349, -3.2878])
+1 CF examples for node_idx = 646
+Time for 500 epochs of one example: 82.2604min
+tensor(374)
+Output original model, full adj: tensor([-3.7832, -2.5297, -1.5122, -0.3899], requires_grad=True)
+Output original model, sub adj: tensor([-3.7832, -2.5297, -1.5122, -0.3899])
+1 CF examples for node_idx = 374
+Time for 500 epochs of one example: 82.6013min
+tensor(683)
+Output original model, full adj: tensor([-4.3872, -0.2415, -2.4794, -2.1343], requires_grad=True)
+Output original model, sub adj: tensor([-4.3872, -0.2415, -2.4794, -2.1343])
+1 CF examples for node_idx = 683
+Time for 500 epochs of one example: 82.7813min
+tensor(519)
+Output original model, full adj: tensor([-2.7493, -2.6241, -2.3357, -0.2656], requires_grad=True)
+Output original model, sub adj: tensor([-2.7493, -2.6241, -2.3357, -0.2656])
+1 CF examples for node_idx = 519
+Time for 500 epochs of one example: 82.9726min
+tensor(454)
+Output original model, full adj: tensor([-2.9317, -2.7713, -2.1374, -0.2664], requires_grad=True)
+Output original model, sub adj: tensor([-2.9317, -2.7713, -2.1374, -0.2664])
+1 CF examples for node_idx = 454
+Time for 500 epochs of one example: 83.1895min
+tensor(665)
+Output original model, full adj: tensor([-6.6119, -0.0425, -3.5687, -4.4154], requires_grad=True)
+Output original model, sub adj: tensor([-6.6119, -0.0425, -3.5687, -4.4154])
+1 CF examples for node_idx = 665
+Time for 500 epochs of one example: 83.8138min
+tensor(14)
+Output original model, full adj: tensor([-1.1921e-07, -1.6509e+01, -5.5128e+01, -3.0393e+01],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.1921e-07, -1.6509e+01, -5.5128e+01, -3.0393e+01])
+0 CF examples for node_idx = 14
+Time for 500 epochs of one example: 85.0510min
+tensor(663)
+Output original model, full adj: tensor([-6.8395, -2.6645, -0.3184, -1.5997], requires_grad=True)
+Output original model, sub adj: tensor([-6.8395, -2.6645, -0.3184, -1.5997])
+0 CF examples for node_idx = 663
+Time for 500 epochs of one example: 85.3669min
+tensor(246)
+Output original model, full adj: tensor([-1.3808e-03, -1.6531e+01, -2.0320e+01, -6.5859e+00],
+       requires_grad=True)
+Output original model, sub adj: tensor([-1.3808e-03, -1.6531e+01, -2.0320e+01, -6.5859e+00])
+0 CF examples for node_idx = 246
+Time for 500 epochs of one example: 86.3440min
+tensor(632)
+Output original model, full adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796], requires_grad=True)
+Output original model, sub adj: tensor([-5.8229, -1.3219, -0.6456, -1.5796])
+0 CF examples for node_idx = 632
+Time for 500 epochs of one example: 86.3966min
+Total time elapsed: 86.3966s
+Number of CF examples found: 140/140
+os path:  results/syn1/SGD
