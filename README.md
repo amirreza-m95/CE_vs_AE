@@ -1,7 +1,8 @@
 # Counterfactual Explanation_vs_Adversarial Examples
-Counterfacutal Explanation vs Adversarial Examples
+
 
 ## Table of Contents
+- [Requirements](#requirements)
 - [CFF](#cFF)
 - [CF_GNNExplainer](#cF_GNNExplainer)
 - [CLEAR](#cLEAR)
@@ -9,54 +10,50 @@ Counterfacutal Explanation vs Adversarial Examples
 - [RCExplainer](#rCExplainer)
 - [Adversarials](#adversarials)
 
+## Requirements
+- Python 3.7
+- pytorch 1.9.0
+- cuda 10.2
+- dgl-cuda10.2 (Edit graphconv.py)
+- torch-geometric
+
+  Detailed requirements are available in requirements.txt in root folder.
+
 
 ## CFF
 1. To run the experiments, dgl-cuda library is required. https://docs.dgl.ai/install/index.html.
-2. After installing dgl-cuda library, Please replace the graphconv.py file in the dgl library with the file (with the same name) provided in the gnn_cff root folder. This is for the relaxation purpose as described in the paper.
-3. The training and explaining are independent phases. For you convenience, we provide pre-trained GNN model params. Under the project root folder, run:
+2. After installing dgl-cuda library, Please replace the graphconv.py file in the dgl library with the file (with the same name) provided in the CE/gnn_cff folder. This is for the relaxation purpose as described in the paper.
+3. The training and explaining are independent phases. For you convenience, we provide pre-trained GNN model params. Under the CE/gnn_cff folder, run:
     ```
     unzip log.zip
     ```
-4. To set the python path, under the project root folder, run:
+4. To set the python path, under the project root folder, run the following command:
     ```
-    source setup.sh
+    export PYTHONPATH=$PYTHONPATH:"$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/CE/gnn_cff"
     ```
 5. As an example, to generate explanations for node classification task (Tree-Cycles dataset as example), run:
     ```
-    python scripts/exp_node_tree_cycles.py
+    python CE/gnn_cff/scripts/exp_node_tree_cycles.py
     ```
 6. For generating explanations for graph classification task (Mutag0 dataset as example), run:
     ```
-    python scripts/exp_graph.py
+    python CE/gnn_cff/scripts/exp_graph.py
     ```
 7. The codes for training GNNs are also provided. For instance, for training GNN for node classification, run:
     ```
-    python scripts/train_node_classification.py
+    python CE/gnn_cff/scripts/train_node_classification.py
     ```
     for graph classification, run:
     ```
-    python scripts/train_graph_classification.py
+    python CE/gnn_cff/scripts/train_graph_classification.py
     ```
-- Moving Graphconv.py file and changing transform to transforms in library import.
-- add this graph conv file beside script
 
-
-Torch:
-pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
-dgl: 
-#### If you have installed dgl-cuXX package, please uninstall it first.
-pip install  dgl -f https://data.dgl.ai/wheels/cu117/repo.html
-pip install  dglgo -f https://data.dgl.ai/wheels-test/repo.html
-
-Running Xp BA shapes CFF:
-
-    export PYTHONPATH=$PYTHONPATH:"$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/CE/gnn_cff"
 
 
 ## CF-GNNExplainer 
 #### Training original models
 
-To train the original GNN models for the BA-shapes dataset in the paper, cd into src and run this command:
+To train the original GNN models for the BA-shapes dataset in the paper, cd into CE/cf-gnnexplainer/src and run this command:
 
 ```train
 python train.py --dataset=syn1
@@ -106,7 +103,7 @@ Our model achieves the following performance:
 
 ### GCFExplainer
 
-We have already provided gnn and neurosed base models. If you want to run our method using your own dataset, firstly, you have to train your own gnn and neurosed base models.
+We have already provided gnn and neurosed base models. If you want to run this method using your own dataset, firstly, you have to train your own gnn and neurosed base models.
 
 - For gnn base models, you can use our [gnn.py](gnn.py) module.
 - For neurosed base models, please follow [neurosed](https://github.com/idea-iitd/greed) repository.
