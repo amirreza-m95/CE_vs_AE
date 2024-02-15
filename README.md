@@ -13,13 +13,13 @@
 - [Adversarials](#adversarials)
 
 ## Requirements
-- Python 3.7
-- pytorch 1.9.0
-- cuda 10.2
+- Python 3.10
+- pytorch 1.13.0
+- cuda 11.7
 - dgl-cuda10.2 (Edit graphconv.py)
-- torch-geometric
+- torch-geometric 2.2
 
-  Detailed requirements are available in requirements.txt in root folder.
+  Detailed requirements are available in requirements.txt in root folder and discussed more in each method directory.
 
 
 ## CFF
