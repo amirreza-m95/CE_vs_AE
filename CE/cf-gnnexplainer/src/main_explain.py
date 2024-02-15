@@ -42,7 +42,7 @@ torch.autograd.set_detect_anomaly(True)
 
 
 # Import dataset from GNN explainer paper
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..",'data/gnn_explainer/syn1.pickle'), "rb") as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../../datasets","data/gnn_explainer/{}.pickle".format(args.dataset)), "rb") as f:
 	data = pickle.load(f)
 
 adj = torch.Tensor(data["adj"]).squeeze()       # Does not include self loops
@@ -117,6 +117,6 @@ print("Number of CF examples found: {}/{}".format(len(test_cf_examples), len(idx
 
 # Save CF examples in test set
 
-with safe_open("results/{}/{}/{}_cf_examples_lr{}_beta{}_mom{}_epochs{}_seed{}".format(args.dataset, args.optimizer, args.dataset,
+with safe_open("CE/cf-gnnexplainer/results/{}/{}/{}_cf_examples_lr{}_beta{}_mom{}_epochs{}_seed{}".format(args.dataset, args.optimizer, args.dataset,
 																	args.lr, args.beta, args.n_momentum, args.num_epochs, args.seed), "wb") as f:
 	pickle.dump(test_cf_examples, f)

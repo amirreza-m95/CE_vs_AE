@@ -14,7 +14,13 @@ import torch.nn.functional as F
 from torch.nn.utils import clip_grad_norm
 from gcn import GCNSynthetic
 from utils.utils import normalize_adj
-from torch_geometric.utils import accuracy
+# from torch_geometric.utils import accuracy
+
+def accuracy(pred, target):
+    r"""Computes the accuracy of predictions.
+https://pytorch-geometric.readthedocs.io/en/1.3.1/_modules/torch_geometric/utils/metric.html
+    """
+    return (pred == target).sum().item() / target.numel()
 
 # Defaults based on GNN Explainer
 parser = argparse.ArgumentParser()
@@ -34,7 +40,7 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 
 # Import dataset from GNN explainer paper
-with open("../data/gnn_explainer/{}.pickle".format(args.dataset[:4]), "rb") as f:
+with open("CE/datasets/data/gnn_explainer/{}.pickle".format(args.dataset[:4]), "rb") as f:
 	data = pickle.load(f)
 
 # For models trained using our GCN_synethic from GNNExplainer,

@@ -1,4 +1,5 @@
 cevsaevenv/*
+textvenv/*
 # AE/dataset/*
 results/*
 CE/gnn_cff/log/*
